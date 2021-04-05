@@ -79,6 +79,10 @@ export default class Chat extends React.Component {
         console.log("offline");
         Alert.alert('No internet connection, unable to send messages');
         this.setState({
+          user: {
+            _id: user.uid,
+            name: this.props.route.params.name,
+          },
           isConnected: false,
         });
         this.getMessages();
