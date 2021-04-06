@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Alert, Platform, KeyboardAvoidingView } from 'react-native';
-import { GiftedChat, Bubble } from 'react-native-gifted-chat';
+import { GiftedChat, Bubble, InputToolbar } from 'react-native-gifted-chat';
 import AsyncStorage from '@react-native-community/async-storage';
 import NetInfo from '@react-native-community/netinfo';
 
@@ -79,10 +79,6 @@ export default class Chat extends React.Component {
         console.log("offline");
         Alert.alert('No internet connection, unable to send messages');
         this.setState({
-          user: {
-            _id: user.uid,
-            name: this.props.route.params.name,
-          },
           isConnected: false,
         });
         this.getMessages();
