@@ -13,6 +13,7 @@ export default class Start extends React.Component {
       pressStatus2: false,
       pressStatus3: false,
       pressStatus4: false,
+      noColorPress: false,
     };
   }
 
@@ -33,23 +34,24 @@ export default class Start extends React.Component {
             <Text style={styles.backgroundColorText}>Choose Background Color:</Text>
             <View style={styles.colors}>
               <TouchableOpacity
-                onPress={() => {this.setState({color: '#090C08', pressStatus1: true, pressStatus2: false, pressStatus3: false, pressStatus4: false })}}
+                onPress={() => {this.setState({color: '#090C08', pressStatus1: true, pressStatus2: false, pressStatus3: false, pressStatus4: false, noColorPress: false })}}
                 style={this.state.pressStatus1 ? styles.colorPressed1 : styles.color1}
               />
               <TouchableOpacity
-                style={styles.color2}
-                onPress={() => {this.setState({color: '#474056', pressStatus1: false, pressStatus2: true, pressStatus3: false, pressStatus4: false })}}
+                onPress={() => {this.setState({color: '#474056', pressStatus1: false, pressStatus2: true, pressStatus3: false, pressStatus4: false, noColorPress: false })}}
                 style={this.state.pressStatus2 ? styles.colorPressed2 : styles.color2}
               />
               <TouchableOpacity
-                style={styles.color3}
-                onPress={() => {this.setState({color: '#8A95A5', pressStatus1: false, pressStatus2: false, pressStatus3: true, pressStatus4: false })}}
+                onPress={() => {this.setState({color: '#253CCD', pressStatus1: false, pressStatus2: false, pressStatus3: true, pressStatus4: false, noColorPress: false })}}
                 style={this.state.pressStatus3 ? styles.colorPressed3 : styles.color3}
               />
               <TouchableOpacity
-                style={styles.color4}
-                onPress={() => {this.setState({color: '#B9C6AE', pressStatus1: false, pressStatus2: false, pressStatus3: false, pressStatus4: true})}}
+                onPress={() => {this.setState({color: '#378A54', pressStatus1: false, pressStatus2: false, pressStatus3: false, pressStatus4: true, noColorPress: false})}}
                 style={this.state.pressStatus4 ? styles.colorPressed4 : styles.color4}
+              />
+              <TouchableOpacity
+                onPress={() => {this.setState({color: '#fff', pressStatus1: false, pressStatus2: false, pressStatus3: false, pressStatus4: false, noColorPress: true})}}
+                style={this.state.noColorPress ? styles.noColorPressed : styles.noColor}
               />
             </View>
               <TouchableOpacity style={styles.buttonBackground}
@@ -127,7 +129,9 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 40/2,
-    margin: 15
+    margin: 15,
+    borderColor: '#000',
+    borderWidth: 1,
   },
 
   color2: {
@@ -135,19 +139,35 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 40/2,
-    margin: 15
+    margin: 15,
+    borderColor: '#000',
+    borderWidth: 1,
   },
 
   color3: {
-    backgroundColor: '#8A95A5',
+    backgroundColor: '#253CCD',
     width: 40,
     height: 40,
     borderRadius: 40/2,
-    margin: 15
+    margin: 15,
+    borderColor: '#000',
+    borderWidth: 1,
   },
 
   color4: {
-    backgroundColor: '#B9C6AE',
+    backgroundColor: '#378A54',
+    width: 40,
+    height: 40,
+    borderRadius: 40/2,
+    margin: 15,
+    borderColor: '#000',
+    borderWidth: 1,
+  },
+
+  noColor: {
+    backgroundColor: '#fff',
+    borderColor: '#000',
+    borderWidth: 1,
     width: 40,
     height: 40,
     borderRadius: 40/2,
@@ -156,43 +176,52 @@ const styles = StyleSheet.create({
 
   colorPressed1: {
     backgroundColor: '#090C08',
-    width: 40,
-    height: 40,
-    borderRadius: 40/2,
-    margin: 15,
-    padding: 10,
-    borderWidth: 5,
-    borderColor: '#fff',
+    borderColor: '#000',
+    borderWidth: 1,
+    width: 30,
+    height: 30,
+    borderRadius: 30/2,
+    margin: 20,
   },
 
   colorPressed2: {
     backgroundColor: '#474056',
-    width: 40,
-    height: 40,
-    borderRadius: 40/2,
-    margin: 15,
-    borderWidth: 5,
-    borderColor: '#fff',
+    borderColor: '#000',
+    borderWidth: 1,
+    width: 30,
+    height: 30,
+    borderRadius: 30/2,
+    margin: 20,
   },
 
   colorPressed3: {
-    backgroundColor: '#8A95A5',
-    width: 40,
-    height: 40,
-    borderRadius: 40/2,
-    margin: 15,
-    borderWidth: 5,
-    borderColor: '#fff',
+    backgroundColor: '#253CCD',
+    borderColor: '#000',
+    borderWidth: 1,
+    width: 30,
+    height: 30,
+    borderRadius: 30/2,
+    margin: 20,
   },
 
   colorPressed4: {
-    backgroundColor: '#B9C6AE',
-    width: 40,
-    height: 40,
-    borderRadius: 40/2,
-    margin: 15,
-    borderWidth: 5,
-    borderColor: '#fff',
+    backgroundColor: '#378A54',
+    borderColor: '#000',
+    borderWidth: 1,
+    width: 30,
+    height: 30,
+    borderRadius: 30/2,
+    margin: 20,
+  },
+
+  noColorPressed: {
+    backgroundColor: '#fff',
+    borderColor: '#000',
+    borderWidth: 1,
+    width: 30,
+    height: 30,
+    borderRadius: 30/2,
+    margin: 20,
   },
 
   buttonText: {
