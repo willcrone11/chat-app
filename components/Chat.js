@@ -264,7 +264,6 @@ export default class Chat extends React.Component {
           renderSend={renderSend}
           renderActions={this.renderCustomActions}
           renderCustomView={this.renderCustomView}
-          showUserAvatar
           isTyping
           //renderUsernameOnMessage
           style={{backgroundColor: color }}
